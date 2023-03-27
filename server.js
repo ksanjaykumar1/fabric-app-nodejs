@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
 import notFound from './middleware/notFound';
+import errorHandler from './middleware/error-handler';
 
 const { PORT } = process.env;
 
@@ -13,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 app.use(notFound);
+app.use(errorHandler);
 
 const port = PORT || 3000;
 app.listen(port, () => {
