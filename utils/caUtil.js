@@ -27,7 +27,6 @@ const enrollAdmin = async (caClient, wallet, orgMspId) => {
       mspId: orgMspId,
       type: 'X.509',
     };
-    console.log(x509Identity);
     await wallet.put(connecting_admin_user_Id, x509Identity);
     console.log(
       `Successfully enrolled admin user and imported it into the wallet`
