@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  fabric-server:
+    image: fabric-server:latest
+    container_name: fabric-server
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - ./wallet:/app/wallet
+      - ./connectionProfiles:/app/connectionProfiles
+
+volumes:
+  node_modules:
